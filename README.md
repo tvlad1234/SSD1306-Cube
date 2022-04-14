@@ -2,13 +2,12 @@
 *I2C SSD1306 Library for STM32Cube*\
 Based on [Adafruit-SSD1306](https://github.com/adafruit/Adafruit_SSD1306) and [Adafruit GFX Library](https://github.com/adafruit/Adafruit-GFX-Library)
 ## Usage
-**Modify `#include "stm32f1xx_hal.h"` in _ssd1306.h_ and _gfx.h_ to match your configuration.**\
-This library can use DMA to write to the display. To enable it, configure DMA for the I2C peripheral associated to the display and uncomment line 8 in _ssd1306.h_
+This library can use DMA to write to the display. To enable it, configure DMA for the I2C peripheral associated to the display and uncomment line 7 in _ssd1306.h_
 
 ### Initializing the display
 Before using the display, it must be initialized with _ssd1306Begin_.\
-_ssd1306Begin_ takes two parameters: display mode and a pointer to the I2C Handler.\
-_Example:_ `ssd1306Begin(SSD1306_SWITCHCAPVCC, &hi2c1);`
+_ssd1306Begin_ takes four parameters: display mode, a pointer to the I2C Handler, width and height.\
+_Example:_ `ssd1306Begin(SSD1306_SWITCHCAPVCC, &hi2c1, 128, 64);`
 
 ### Using the display
 
